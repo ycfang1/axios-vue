@@ -2,7 +2,7 @@
   <div>
     <button @click="toggle=true">开启弹框</button>
     <div class="modal modal-bg" :class="toggle?'show':''">
-      <Modal class="examModal">
+      <Modal class="examModal" v-if="toggle">
         <template slot="header">
           <div style="position:relative;">
             <p>我是头部</p>
@@ -23,7 +23,7 @@ export default {
   },
  methods: {
     closethis(){
-    console.log(11)
+    this.toggle=false;
   }
  },
 };
