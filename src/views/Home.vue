@@ -5,7 +5,7 @@
       <Modal class="examModal" v-if="toggle">
         <template slot="header">
           <div style="position:relative;">
-            <p>我是头部</p>
+            <p>考试页面的弹窗</p>
             <span style="position:absolute;top:5px;right:5px;" @click="closethis">X</span>
           </div>
         </template>
