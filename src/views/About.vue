@@ -133,6 +133,7 @@ export default {
       tab() {
         let app = document.getElementById("modal-body");
         app.scrollTop = 0;
+        document.getElementById('nextPage').disabled=true;
       }
    },
   methods: {
