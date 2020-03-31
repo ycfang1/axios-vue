@@ -5,7 +5,9 @@ import store from './store'
 import axios from "axios"
 import VueI18n from 'vue-i18n'
 import commonComponent from "@/components/index.js"
-Vue.use(commonComponent)
+import globajDirective from "@/components/globajDirective.js"
+Vue.use(commonComponent);
+Vue.use(globajDirective)
 import dataCn from "../public/data/datacn.js"
 import dataEn from "../public/data/dataen.js"
 window.dataCn=dataCn;
@@ -37,6 +39,34 @@ Vue.prototype.axios = axios;
 Vue.config.productionTip = false
 import bus from './bus.js';
 Vue.prototype.bus = bus;
+import { Loading } from 'element-ui';
+
+axios.interceptors.request.use(
+  req => {
+    loading = Loading.service({
+      text: '加载中……',
+    });
+    return req; //拦截完再发送出去
+  },
+  err => {
+    return Promise.reject(err);
+  }
+);
+
+let loading;
+axios.interceptors.response.use(
+  res => {
+    
+  loading.close();
+
+    return res; //拦截完再返回数据
+  },
+  err => {
+    return Promise.reject(err);
+  }
+);
+
+
 new Vue({
   router,
   store,

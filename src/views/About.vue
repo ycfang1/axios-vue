@@ -1,190 +1,175 @@
 <template>
-  <div class="container">
-    <div>
-      <div style="height:120px;">我是about页面</div>
-      <main>
-        <div id="gaishu">
-          <p>认证概述</p>HCIP-5G-RNP&RNO认证，定位于考察相关从业人员对5G网络原理深入原理的掌握、基于5G网络的组网特点对5G网络特性的设计应用与调优能力,无线网络性能优化与投诉问题的分析处理能力，旨在规范5G无线网络规划优化专业人才的技能标准。
-          HCIP-5G-RNP&RNO认证包括但不限于：5G空中接口原理、5G协议与信令分析、5G无线网络规划、华为5G无线网络优化相关特性、5G无线网络性能管理与优化、5G无线网络问题分析与处理。
-          通过HCIP-5G-RNP&RNO认证，将证明您能够独立完成华为5G无线网络的规划与小区参数设计，对网优相关特性进行评估与应用、管理无线网络性能，完成性能问题的分析与优化。
-          拥有HCIP-5G-RNP&RNO认证工程师，意味着企业和部门有能力对华为5G无线网络进行详细规划，对网络性能性能进行管理与保障，支撑用户业务体验。
+  <div>
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">开始演示模态框</button>
+    <!-- 模态框（Modal） -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog exam-modal">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+          </div>-->
+          <div id="modal-body" class="modal-body">
+            <ul class="nav nav-tabs" id="myTab">
+              <li :class="{active:tab==1}">
+                <a href="#home"  data-toggle="tab" @click="tab=1">注册协议</a>
+              </li>
+              <li :class="{active:tab==2}">
+                <a href="#profile" data-toggle="tab" @click="tab=2">隐私协议</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="home">
+                <p>注册协议</p>本产品尊重并保护所有使用网络服务用户的个人隐私权。为了给您提供更
+                准确、更有个性化的服务，会按照本隐私权政策的规定使用和披露您的个
+                人信息。但将以高度的勤勉、审慎义务对待这些信息。除本隐私权政策另
+                有规定外，在未征得您事先许可的情况下，本产品不会将这些信息对外披
+                露或向第三方提供。本产品会不时更新本隐私权政策。您在同意本产品网
+                络服务使用协议之时，即视为您已经同意本隐私权政策全部内容。本隐私
+                权政策属于本产品网络服务使用协议不可分割的一部分。
+                1.适用范围
+                a)在您注册本产品帐号时，
+                您根据本产品要求提供的个人注册信息（商家应法律法规要求需公示的企
+                业名称及相关工商注册信息除外）；
+                b)在您使用本产品网络服务，或访问本产品平台网页时，本产品自动接收
+                并记录的您的浏览器和iphone或者ipad上的信息，包括但不限于您的IP
+                地址、浏览器的类型、使用的语言、访问日期和时间、软硬件特征信息及
+                您需求的网页记录等数据；
+                c)本产品通过合法途径从商业伙伴处取得的用户个人数据。您了解并同
+                意，以下信息不适用本隐私权政策：
+                d)您在使用本产品平台提供的搜索服务时输入的关键字信息；隐私政策
+                2.信息使用
+                a)本产品不会向任何无关第三方提供、出售、出租、分享或交易您的个人
+                信息，除非事先得到您的许可，或该第三方和本产品（含本产品关联公司）
+                单独或共同为您提供服务，且在该服务结束后，其将被禁止访问包括其以
+                前能够访问的所有这些资料。
+                b)本产品亦不允许任何第三方以任何手段收集、编辑、出售或者无偿传播
+                您的个人信息。任何本产品平台用户如从事上述活动，一经发现，本产品
+                有权立即终止与该用户的服务协议。
+                c)为服务用户的目的，本产品可能通过使用您的个人信息，向您提供您感
+                兴趣的信息，包括但不限于向您发出产品和服务信息，或者与本产品合作
+                伙伴共享信息以便他们向您发送有关其产品和服务的信息（后者需要您的
+                事先同意）。
+                3.信息披露
+                在如下情况下，本产品将依据您的个人意愿或法律的规定全部或部分的披
+                露您的个人信息：
+                a)经您事先同意，向第三方披露；
+                b)为提供您所要求的产品和服务，而必须和第三方分享您的个人信息；
+                c)根据法律的有关规定，或者行政或司法机构的要求，向第三方或者行政、
+                司法机构披露；
+                d)如您出现违反中国有关法律、法规或者本产品服务协议或相关规则的情
+                况，需要向第三方披露；
+              </div>
+              <div class="tab-pane" id="profile">
+                <p>隐私协议</p>本产品尊重并保护所有使用网络服务用户的个人隐私权。为了给您提供更
+                准确、更有个性化的服务，会按照本隐私权政策的规定使用和披露您的个
+                人信息。但将以高度的勤勉、审慎义务对待这些信息。除本隐私权政策另
+                有规定外，在未征得您事先许可的情况下，本产品不会将这些信息对外披
+                露或向第三方提供。本产品会不时更新本隐私权政策。您在同意本产品网
+                络服务使用协议之时，即视为您已经同意本隐私权政策全部内容。本隐私
+                权政策属于本产品网络服务使用协议不可分割的一部分。
+                1.适用范围
+                a)在您注册本产品帐号时，
+                您根据本产品要求提供的个人注册信息（商家应法律法规要求需公示的企
+                业名称及相关工商注册信息除外）；
+                b)在您使用本产品网络服务，或访问本产品平台网页时，本产品自动接收
+                并记录的您的浏览器和iphone或者ipad上的信息，包括但不限于您的IP
+                地址、浏览器的类型、使用的语言、访问日期和时间、软硬件特征信息及
+                您需求的网页记录等数据；
+                c)本产品通过合法途径从商业伙伴处取得的用户个人数据。您了解并同
+                意，以下信息不适用本隐私权政策：
+                d)您在使用本产品平台提供的搜索服务时输入的关键字信息；隐私政策
+                2.信息使用
+                a)本产品不会向任何无关第三方提供、出售、出租、分享或交易您的个人
+                信息，除非事先得到您的许可，或该第三方和本产品（含本产品关联公司）
+                单独或共同为您提供服务，且在该服务结束后，其将被禁止访问包括其以
+                前能够访问的所有这些资料。
+                b)本产品亦不允许任何第三方以任何手段收集、编辑、出售或者无偿传播
+                您的个人信息。任何本产品平台用户如从事上述活动，一经发现，本产品
+                有权立即终止与该用户的服务协议。
+                c)为服务用户的目的，本产品可能通过使用您的个人信息，向您提供您感
+                兴趣的信息，包括但不限于向您发出产品和服务信息，或者与本产品合作
+                伙伴共享信息以便他们向您发送有关其产品和服务的信息（后者需要您的
+                事先同意）。
+                3.信息披露
+                在如下情况下，本产品将依据您的个人意愿或法律的规定全部或部分的披
+                露您的个人信息：
+                a)经您事先同意，向第三方披露；
+                b)为提供您所要求的产品和服务，而必须和第三方分享您的个人信息；
+                c)根据法律的有关规定，或者行政或司法机构的要求，向第三方或者行政、
+                司法机构披露；
+                d)如您出现违反中国有关法律、法规或者本产品服务协议或相关规则的情
+                况，需要向第三方披露；
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer" style="text-align:center;">
+            <button v-if="tab==1" type="button" class="btn btn-default" @click="nextPage" id="nextPage" disabled>下一页</button>
+            <button v-if="tab==2" type="button" class="btn btn-default" data-dismiss="modal">不同意</button>
+            <button v-if="tab==2" id="con_btn" disabled type="button" class="btn btn-danger">同意</button>
+          </div>
         </div>
-        <div id="qianti">
-          <p>认证前提条件</p>无
-        </div>
-        <div id="feiyong">
-          <p>考试及费用</p>H35-581 HCIP-5G-RNP&RNO
-          华为认证5G网规网优
-          高级工程师 2100 RMB 90分钟 60道单选、
-          多选或判断题 600/1000 点击查看
-        </div>
-        <div id="dagang">
-          <p>考试大纲</p>一、5G 无线网络深入原理 (30%)
-          1. 5G空中接口原理
-          2. 5G协议与信令分析
-          二、5G 无线网络规划 (15%)
-          1. 5G规划相关特性（Massive MIMO， 双连接， 上下行解耦）与链路预算
-          2. 5G无线网络链路预算、覆盖估算与容量估算
-          3. 5G小区参数规划
-        </div>
-        <div id="cailiao">
-          <p>参考材料</p>5G 空中接口原理
-          5G 无线网络规划概述
-          5G 无线网络小区参数设计
-          5G 无线网络规划仿真
-          5G 无线网络特性
-          5G 协议与流程分析
-          5G 无线网络性能管理
-          5G 网络互操作培训
-          5G 无线网络优化问题分析
-          5G 无线网络评估
-        </div>
-        <div id="peixun">
-          <p>推荐培训</p>认证培训名称 培训级别 培训时长
-          华为认证5G无线网规网优高级工程师培训 III 15天
-          *产品解决方案培训 培训级别 培训时长
-          5G空中接口培训 I 2天
-          5G协议与流程分析培训 II 2天
-          5G无线网络规划培训 III 2天
-          5G无线网络特性培训 II 4天
-          5G无线网络性能管理培训 II 1天
-          5G网络互操作培训 III 1天
-          5G无线网络优化问题分析培训 III 2天
-        </div>
-        <div id="youxiaoqi">
-          <p>考试成绩有效期</p>本考试成绩有效期为 3 年。
-        </div>
-        <div id="fangfa">
-          <p>再认证方法</p>证书持有者在证书超过有效期之前，可以通过以下方式更新证书有效期
-          1. 再次通过本门考试。
-          2. 通过本技术领域的更高级别认证的任意一门考试。
-        </div>
-      </main>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal -->
     </div>
-    <div id='footer' style="height:100vh;">
-
-    </div>
-    <nav id="nav">
-      <ul class="list_block">
-        <li
-          :class="toggle==index?'active':''"
-          v-for="(item,index) in navList" @click="jumpTo(index)"
-          :key="index"
-        >{{item.name}}</li>
-      </ul>
-    </nav>
   </div>
 </template>
 <script>
-// import logo from '../assets/logo.png'
 export default {
   data() {
     return {
-      imgSrc: require("../assets/logo.png"),
-      navList: [
-        {
-          name: "认证概述"
-        },
-        {
-          name: "认证前提条件"
-        },
-        {
-          name: "考试及费用"
-        },
-        {
-          name: "考试大纲"
-        },
-        {
-          name: "参考资料"
-        },
-        {
-          name: "推荐培训"
-        },
-        {
-          name: "考试成绩有效期"
-        },
-        {
-          name: "再认证方法"
-        }
-      ],
-      topArr: [],
-      toggle: 0
+      tab: 1
     };
   },
   methods: {
-    scroll() {
-      let scrollTop =
-        window.pageXOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop;
-      console.log(scrollTop);
-      if (scrollTop>= this.topArr[0]&& scrollTop < this.topArr[1]) {
-        this.toggle = 0;
-      } else if (scrollTop >= this.topArr[1] && scrollTop < this.topArr[2]) {
-        this.toggle = 1;
-      } else if (scrollTop >= this.topArr[2] && scrollTop < this.topArr[3]) {
-        this.toggle = 2;
-      }else if (scrollTop >= this.topArr[3] && scrollTop < this.topArr[4]) {
-        this.toggle = 3;
-      }else if (scrollTop >= this.topArr[4] && scrollTop < this.topArr[5]) {
-        this.toggle = 4;
-      }else if (scrollTop >= this.topArr[5] && scrollTop < this.topArr[6]) {
-        this.toggle = 5;
-      }else if (scrollTop >= this.topArr[6] && scrollTop < this.topArr[7]) {
-        this.toggle = 6;
-      }else if (scrollTop >= this.topArr[7] ) {
-        this.toggle =7;
+    loadingMore() {
+      var app = document.getElementById("modal-body");
+      var bottom = app.scrollHeight - app.clientHeight - app.scrollTop;
+      //  console.log(bottom);
+      if (bottom <= 20) {
+        let con_btn=document.getElementById('con_btn');
+        let nextPage=document.getElementById('nextPage')
+        if(con_btn){
+          con_btn.disabled = false;
+          
+        }
+        if(nextPage){
+          nextPage.disabled=false;
+          nextPage.style.backgroundColor="red";
+          nextPage.style.color="#fff";
+
+        }
+        
       }
     },
-    getData() {
-      this.topArr[0] = document.getElementById("gaishu").offsetTop;
-      this.topArr[1] = document.getElementById("qianti").offsetTop;
-      this.topArr[2] = document.getElementById("feiyong").offsetTop;
-      this.topArr[3] = document.getElementById("dagang").offsetTop;
-      this.topArr[4] = document.getElementById("cailiao").offsetTop;
-      this.topArr[5] = document.getElementById("peixun").offsetTop;
-      this.topArr[6] = document.getElementById("youxiaoqi").offsetTop;
-      this.topArr[7] = document.getElementById("fangfa").offsetTop;
-
-      console.log(this.topArr);
-    },
-    jumpTo(val){
-      window.scrollTo({
-        top:this.topArr[val]
-      })
+    nextPage(){
+       $('#myTab a:last').tab('show');
+       this.tab=2;
     }
   },
   mounted() {
-    this.getData();
-    window.addEventListener("scroll", this.scroll);
+    let box = document.getElementById("modal-body");
+    box.addEventListener("scroll", this.loadingMore);
   }
 };
 </script>
-<style lang="scss">
-.item {
-  // border:1px solid #00ff00;
-  height: 200px;
+<style lang="css">
+.exam-modal {
+  top: 50%;
+  transform: translateY(-50%) !important;
 }
-#nav {
-  position: fixed;
-  top: 350px;
-  right: 10px;
-  z-index: 999;
-  border-left: 1px solid #000;
-  background: #fff;
-}
-main {
-  font-size: 24px;
-  line-height: 35px;
-}
-.list_block {
-  li {
-    height: 27px;
-    line-height: 27px;
-    cursor: pointer;
-    &.active {
-      color: #f44;
-    }
-  }
+#modal-body {
+  position: relative;
+  padding: 20px;
+  height: 300px;
+  overflow: auto;
 }
 </style>
