@@ -111,7 +111,7 @@
             </div>
           </div>
           <div class="modal-footer" style="text-align:center;">
-            <button v-if="tab==1" type="button" class="btn btn-default" @click="nextPage" id="nextPage" disabled>下一页</button>
+            <button v-if="tab==1" type="button" class="btn btn-primary" @click="nextPage" id="nextPage" disabled>下一页</button>
             <button v-if="tab==2" type="button" class="btn btn-default" data-dismiss="modal">不同意</button>
             <button v-if="tab==2" id="con_btn" disabled type="button" class="btn btn-danger">同意</button>
           </div>
@@ -129,6 +129,12 @@ export default {
       tab: 1
     };
   },
+   watch: {
+      tab() {
+        let app = document.getElementById("modal-body");
+        app.scrollTop = 0;
+      }
+   },
   methods: {
     loadingMore() {
       var app = document.getElementById("modal-body");
@@ -143,11 +149,10 @@ export default {
         }
         if(nextPage){
           nextPage.disabled=false;
-          nextPage.style.backgroundColor="red";
+          // nextPage.style.backgroundColor="red";
           nextPage.style.color="#fff";
 
         }
-        
       }
     },
     nextPage(){
